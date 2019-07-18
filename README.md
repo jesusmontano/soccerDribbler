@@ -1,23 +1,3 @@
-* Project Title
-* Background and Overview
-    * Motivation for project
-    * High level overview
-* Functionality and MVP Features
-    * Choose carefully
-    * Be especially detailed
-* Architecture and Technologies
-    * Technology 1
-        * Description
-        * Justification
-    * Technology 2
-        * Description
-        * Justification
-    ...
-Implementation Timeline
-    * Most important category
-    * Daily breakdown
-    * Aim to be done by Friday
-
 # Soccer Dribbler
 ## Background and Overview
 Soccer Dribbler is a simple single-player game. The objective of the game is to avoid oncoming defenders for as long as possible. Running into a defender will end the game.
