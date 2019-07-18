@@ -3,14 +3,14 @@
 Soccer Dribbler is a simple single-player game. The objective of the game is to avoid oncoming defenders for as long as possible. Running into a defender will end the game.
 
 ## Functionality & MVP Features
-* Users are able to move the soccer player with the ball
-* View the time amount of time they've held onto the ball without colliding with a defender
-* Users are able to pause the game
+* Users are able to move the soccer player with the ball.
+* View the time amount of time they've held onto the ball without colliding with a defender.
+* Users are able to pause the game.
 
 ## Architecture and Technologies
 The project was implemented using the following technologies:
-* Vanilla JavaScript for the overall structure and logic of the game
-* `HTML5 Canvas` for rendering
+* Vanilla JavaScript for the overall structure and logic of the game.
+* `HTML5 Canvas` for rendering.
 
 ## Implementation Timeline
 Thursday:
