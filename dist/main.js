@@ -98,3 +98,5 @@ eval("\n\n//# sourceURL=webpack:///./src/index.js?");
 /***/ })
 
 /******/ });
+
+console.log("Webpack is working!");

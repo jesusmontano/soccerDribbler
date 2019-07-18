@@ -1,0 +1,19 @@
+{
+  "name": "javascriptproject",
+  "version": "1.0.0",
+  "description": "Soccer Dribbler is a simple single-player game. The objective of the game is to avoid oncoming defenders for as long as possible. Running into a defender will end the game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusmontano/soccerDribbler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusmontano/soccerDribbler/issues"
+  },
+  "homepage": "https://github.com/jesusmontano/soccerDribbler#readme"
+}
