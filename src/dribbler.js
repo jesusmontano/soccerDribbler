@@ -14,7 +14,7 @@ function randomColor() {
 
 class Dribbler extends MovingObject {
     constructor(options) {
-        options.radius = Dribbler.radius;
+        options.radius = Dribbler.RADIUS;
         options.vel = options.vel || [0, 0];
         options.color = options.color || randomColor();
         super(options);

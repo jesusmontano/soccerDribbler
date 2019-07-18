@@ -6,6 +6,7 @@ class MovingObject {
         this.vel = options.vel;
         this.radius = options.radius;
         this.color = options.color;
+        this.game = options.game;
         // this.isWrappable = true; This does not apply in my case since there is no wrapping.
     }
 
@@ -46,7 +47,10 @@ class MovingObject {
     // } else {
     //     this.remove();
     // }
-    // }   
+    // }
+    remove() {
+        this.game.remove(this);
+    }   
 }
 
 const NORMAL_FRAME_TIME_DELTA = 1000 / 60;
