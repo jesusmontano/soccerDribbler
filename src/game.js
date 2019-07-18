@@ -35,6 +35,13 @@ class Game {
             object.draw(ctx);
         });
     }
+
+    moveObjects(delta) {
+        this.allObjects().forEach((object) => {
+            object.move(delta);
+        });
+    }
+
 }
 
 Game.BG_COLOR = "#000000";
