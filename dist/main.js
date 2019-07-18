@@ -91,12 +91,21 @@
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const canvasEl = document.getElementsByTagName(\"canvas\")[0];\n    // canvasEl.width = Game.DIM_X;\n    // canvasEl.height = Game.DIM_Y;\n    window.MovingObject = MovingObject;\n\n    const ctx = canvasEl.getContext(\"2d\");\n    // const game = new Game();\n    // new GameView(game, ctx).start();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/moving_object.js":
+/*!******************************!*\
+  !*** ./src/moving_object.js ***!
+  \******************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("class MovingObject {\n    constructor(options) {\n        this.pos = options.pos;\n        this.vel = options.vel;\n        this.radius = options.radius;\n        this.color = options.color;\n    }\n\n    draw(ctx) {\n        ctx.fillStyle = this.color;\n\n        ctx.beginPath();\n        ctx.arc(\n            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true\n        );\n        ctx.fill();\n    }\n}\n\nmodule.exports = MovingObject\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ })
 
 /******/ });
-
-console.log("Webpack is working!");

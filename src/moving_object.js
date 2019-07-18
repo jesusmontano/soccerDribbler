@@ -1,5 +1,3 @@
-import { __esModule } from "../dist/main";
-
 class MovingObject {
     constructor(options) {
         this.pos = options.pos;
@@ -19,4 +17,4 @@ class MovingObject {
     }
 }
 
-module.exports = MovingObject;
+module.exports = MovingObject
