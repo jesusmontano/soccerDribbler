@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/defender.js":
+/*!*************************!*\
+  !*** ./src/defender.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const Util = __webpack_require__(/*! ./util */ \"./src/util.js\");\nconst MovingObject = __webpack_require__(/*! ./moving_object */ \"./src/moving_object.js\");\n\nconst DEFAULTS = {\n    COLOR: \"#505050\",\n    RADIUS: 25,\n    SPEED: 4\n};\n\nclass Defender extends MovingObject {\n    constructor(options = {}) {\n        options.color = DEFAULTS.COLOR;\n        options.pos = options.pos // || options.game.randomPosition();\n        options.radius = DEFAULTS.RADIUS;\n        options.vel = options.vel || Util.randomVec(DEFAULTS.SPEED);\n        super(options);\n    }\n\n    // collideWith(otherObject) {\n    //     if (otherObject instanceof Ship) {\n    //         otherObject.relocate();\n    //         return true;\n    //     } else if (otherObject instanceof Bullet) {\n    //         this.remove();\n    //         otherObject.remove();\n    //         return true;\n    //     }\n\n    //     return false;\n    // }\n}\n\nmodule.exports = Defender;\n\n//# sourceURL=webpack:///./src/defender.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const canvasEl = document.getElementsByTagName(\"canvas\")[0];\n    // canvasEl.width = Game.DIM_X;\n    // canvasEl.height = Game.DIM_Y;\n    window.MovingObject = MovingObject;\n\n    const ctx = canvasEl.getContext(\"2d\");\n    // const game = new Game();\n    // new GameView(game, ctx).start();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\")\nconst Defender = __webpack_require__(/*! ./defender */ \"./src/defender.js\");\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const canvasEl = document.getElementsByTagName(\"canvas\")[0];\n    // canvasEl.width = Game.DIM_X;\n    // canvasEl.height = Game.DIM_Y;\n    window.MovingObject = MovingObject;\n    window.Defender = Defender;\n\n    const ctx = canvasEl.getContext(\"2d\");\n    // const game = new Game();\n    // new GameView(game, ctx).start();\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -104,7 +115,18 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class MovingObject {\n    constructor(options) {\n        this.pos = options.pos;\n        this.vel = options.vel;\n        this.radius = options.radius;\n        this.color = options.color;\n    }\n\n    draw(ctx) {\n        ctx.fillStyle = this.color;\n\n        ctx.beginPath();\n        ctx.arc(\n            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true\n        );\n        ctx.fill();\n    }\n}\n\nmodule.exports = MovingObject\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("class MovingObject {\n    constructor(options) {\n        this.pos = options.pos;\n        this.vel = options.vel;\n        this.radius = options.radius;\n        this.color = options.color;\n    }\n\n    draw(ctx) {\n        ctx.fillStyle = this.color;\n\n        ctx.beginPath();\n        ctx.arc(\n            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true\n        );\n        ctx.fill();\n    }\n\n    move(timeDelta) {\n        // timeDelta is number of milliseconds since last move\n        // if the computer is busy the time delta will be larger\n        // in this case the MovingObject should move farther in this frame\n        // velocity of object is how far it should move in 1/60th of a second\n        const velocityScale = timeDelta / NORMAL_FRAME_TIME_DELTA,\n            offsetX = this.vel[0] * velocityScale,\n            offsetY = this.vel[1] * velocityScale;\n\n        this.pos = [this.pos[0] + offsetX, this.pos[1] + offsetY];\n    }\n}\n\nconst NORMAL_FRAME_TIME_DELTA = 1000 / 60;\n\nmodule.exports = MovingObject\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+
+/***/ }),
+
+/***/ "./src/util.js":
+/*!*********************!*\
+  !*** ./src/util.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const Util = {\n    inherits(ChildClass, BaseClass) {\n        ChildClass.prototype = Object.create(BaseClass.prototype);\n        ChildClass.prototype.constructor = ChildClass;\n    },\n    randomVec(length) {\n        const deg = 2 * Math.PI * Math.random();\n        return Util.scale([Math.sin(deg), Math.cos(deg)], length);\n    },\n    // Scale the length of a vector by the given amount.\n    scale(vec, m) {\n        return [vec[0] * m, vec[1] * m];\n    },\n};\n\nmodule.exports = Util; \n\n//# sourceURL=webpack:///./src/util.js?");
 
 /***/ })
 
