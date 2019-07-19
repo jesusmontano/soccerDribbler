@@ -34,6 +34,11 @@ class Dribbler extends MovingObject {
         this.pos = this.game.randomPosition(); // I will want to make this be fixed, not random.
         this.vel = [0, 0]; // If I keep this at [0, 0], it will never move? Maybe I have to set it at a fixed speed.
     }
+
+    stop() {
+        this.vel[0] = 0;
+        this.vel[1] = 0;
+    }
 }
 
 Dribbler.RADIUS = 15;

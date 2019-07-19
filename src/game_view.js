@@ -14,6 +14,7 @@ class GameView {
         });
 
         // key("space", () => { ship.fireBullet(); });
+        key("space", () => { dribbler.stop(); });
     }
 
     start() {

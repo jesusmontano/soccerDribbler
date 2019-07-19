@@ -15,7 +15,7 @@ class MovingObject {
     }
 
     draw(ctx) {
-        // const img = document.getElementById("ronaldo");
+        // const img = document.getElementById("soccer-ball");
         // const pat = ctx.createPattern(img, "repeat");
         ctx.fillStyle = this.color;
 
