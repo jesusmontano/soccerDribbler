@@ -63,7 +63,7 @@ class Game {
         img.onload = function () {
             ctx.drawImage(img, 0, 0);
         };
-        img.src = 'field.jpg';
+        img.src = 'background.jpeg';
 
 
         // ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);

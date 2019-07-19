@@ -15,12 +15,15 @@ class MovingObject {
     }
 
     draw(ctx) {
+        // const img = document.getElementById("ronaldo");
+        // const pat = ctx.createPattern(img, "repeat");
         ctx.fillStyle = this.color;
 
         ctx.beginPath();
         ctx.arc(
             this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
         );
+        // ctx.fillStyle = pat;
         ctx.fill();
     }
 
