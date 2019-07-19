@@ -9,7 +9,8 @@ function randomColor() {
         color += hexDigits[Math.floor((Math.random() * 16))];
     }
 
-    return color;
+    // return color;
+    return "#FFFFFF";
 }
 
 class Dribbler extends MovingObject {
@@ -21,8 +22,12 @@ class Dribbler extends MovingObject {
     }
 
     power(impulse) {
-        this.vel[0] += impulse[0]; // I'm probably going to have to change something here.
-        this.vel[1] += impulse[1];  // I feel like this is what makes the dribbler go faster and faster.
+        // this.vel[0] = impulse[0]; // I'm probably going to have to change something here.
+        // this.vel[1] = impulse[1];  // I feel like this is what makes the dribbler go faster and faster.
+        this.vel[0] = impulse[0] * 3;
+        this.vel[1] = impulse[1] * 3;
+        this.pos[0] += impulse[0];
+        this.pos[1] += impulse[1];
     }
 
     relocate() {
