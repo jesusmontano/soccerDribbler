@@ -59,9 +59,16 @@ class Game {
     }
     
     draw(ctx) {
-        ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
-        ctx.fillStyle = Game.BG_COLOR;
-        ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+        const img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = 'field.jpg';
+
+
+        // ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+        // ctx.fillStyle = Game.BG_COLOR;
+        // ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
         
         this.allObjects().forEach((object) => {
             object.draw(ctx);
