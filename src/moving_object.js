@@ -7,7 +7,7 @@ class MovingObject {
         this.radius = options.radius;
         this.color = options.color;
         this.game = options.game;
-        // this.isWrappable = true; This does not apply in my case since there is no wrapping.
+        this.isWrappable = true; //This does not apply in my case since there is no wrapping.
     }
 
     collideWith(otherObject) {
@@ -15,16 +15,17 @@ class MovingObject {
     }
 
     draw(ctx) {
-        // const img = document.getElementById("soccer-ball");
+        const img = document.getElementById("dribbler");
         // const pat = ctx.createPattern(img, "repeat");
-        ctx.fillStyle = this.color;
+        ctx.drawImage(img, this.pos[0], this.pos[1])
+        // ctx.fillStyle = this.color;
 
         ctx.beginPath();
         ctx.arc(
             this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
         );
         // ctx.fillStyle = pat;
-        ctx.fill();
+        // ctx.fill();
     }
 
     isCollidedWith(otherObject) {
@@ -42,15 +43,17 @@ class MovingObject {
             offsetY = this.vel[1] * velocityScale;
 
         this.pos = [this.pos[0] + offsetX, this.pos[1] + offsetY];
+    
+
+        if (this.game.isOutOfBounds(this.pos)) {
+            if (this.isWrappable) {
+                this.pos = this.game.wrap(this.pos);
+            } else {
+                this.remove();
+            }
+        }
     }
 
-    // if (this.game.isOutOfBounds(this.pos)) {
-    // if (this.isWrappable) {
-    //     this.pos = this.game.wrap(this.pos);
-    // } else {
-    //     this.remove();
-    // }
-    // }
     remove() {
         this.game.remove(this);
     }   

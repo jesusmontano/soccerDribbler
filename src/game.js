@@ -29,7 +29,7 @@ class Game {
 
     addDribbler() {
         const dribbler = new Dribbler({
-            pos: this.randomPosition(), // I think I won't want this to be a random position. I don't want the dribbler to just start anywhere.
+            pos: [465, 250], // this.randomPosition(), 
             game: this
         });
 
@@ -108,11 +108,11 @@ class Game {
         this.checkCollisions();
     }
 
-    // wrap(pos) {
-    //     return [
-    //         Util.wrap(pos[0], Game.DIM_X), Util.wrap(pos[1], Game.DIM_Y)
-    //     ];
-    // } 
+    wrap(pos) {
+        return [
+            Util.wrap(pos[0], Game.DIM_X), Util.wrap(pos[1], Game.DIM_Y)
+        ];
+    } 
     // // Don't need this in the context of my game.
 
 }

@@ -41,5 +41,5 @@ class Dribbler extends MovingObject {
     }
 }
 
-Dribbler.RADIUS = 15;
+Dribbler.RADIUS = 35;
 module.exports = Dribbler;
