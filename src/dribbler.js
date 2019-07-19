@@ -24,8 +24,8 @@ class Dribbler extends MovingObject {
     power(impulse) {
         // this.vel[0] = impulse[0]; // I'm probably going to have to change something here.
         // this.vel[1] = impulse[1];  // I feel like this is what makes the dribbler go faster and faster.
-        this.vel[0] = impulse[0] * 3;
-        this.vel[1] = impulse[1] * 3;
+        this.vel[0] = impulse[0] * 2.5;
+        this.vel[1] = impulse[1] * 2.5;
         this.pos[0] += impulse[0];
         this.pos[1] += impulse[1];
     }
@@ -38,6 +38,13 @@ class Dribbler extends MovingObject {
     stop() {
         this.vel[0] = 0;
         this.vel[1] = 0;
+    }
+
+    sprint(impulse) {
+        this.vel[0] = impulse[0] * 5;
+        this.vel[1] = impulse[1] * 5;
+        this.pos[0] += impulse[0];
+        this.pos[1] += impulse[1];
     }
 }
 

@@ -13,6 +13,11 @@ class GameView {
             key(k, () => { dribbler.power(move); });
         });
 
+        Object.keys(GameView.SPRINT_MOVES).forEach((k) => {
+            const move = GameView.SPRINT_MOVES[k];
+            key(k, () => { dribbler.sprint(move); });
+        });
+
         // key("space", () => { ship.fireBullet(); });
         key("space", () => { dribbler.stop(); });
     }
@@ -42,6 +47,13 @@ GameView.MOVES = {
     a: [-1, 0],
     s: [0, 1],
     d: [1, 0],
+};
+
+GameView.SPRINT_MOVES = {
+    i: [0, -1],
+    j: [-1, 0],
+    k: [0, 1],
+    l: [1, 0],
 };
 
 
