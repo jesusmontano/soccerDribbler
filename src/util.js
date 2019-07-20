@@ -25,7 +25,11 @@ const Util = {
         } else {
             return coord;
         }
-    }
+    },
+    // redirectedVec(length, vel) {
+    //     const deg = 1 / (Math.tan(vel[1]/vel[0]));
+    //     return Util.scale([Math.sin(deg), Math.cos(deg)], length);
+    // }
 };
 
-module.exports = Util; 
+module.exports = Util;

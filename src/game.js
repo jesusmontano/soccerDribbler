@@ -57,6 +57,21 @@ class Game {
             }
         }
     }
+
+    checkWallCollisions() {
+        const obj = this.allObjects();
+        for (let i = 0; i < obj.length; i++) {
+            if (obj[i] instanceof Defender) {
+                if ((obj[i][0] < obj[i].radius) || ((obj[i][0] > 1000 - obj[i].radius))) {
+                    obj[i].wallCollision();
+                }   
+            } if (obj[i] instanceof Defender) {
+                if((obj[i][1] < obj[i].radius) || (obj[i][1] > 600 - obj[i].radius)) {
+                    obj[i].otherWallCollision();
+                }
+            }
+        }
+    }
     
     draw(ctx) {
         const img = new Image();
@@ -77,7 +92,7 @@ class Game {
     
     isOutOfBounds(pos) {
         return (pos[0] < 0) || (pos[1] < 0) ||
-        (pos[0] > Game.DIM_X) || (pos[1] > Game.DIM_Y);
+        (pos[0] > Game.DIM_X - 70) || (pos[1] > Game.DIM_Y - 70);
     }
     
     moveObjects(delta) {
@@ -106,6 +121,7 @@ class Game {
     step(delta) {
         this.moveObjects(delta);
         this.checkCollisions();
+        this.checkWallCollisions();
     }
 
     wrap(pos) {
@@ -121,6 +137,6 @@ Game.BG_COLOR = "#12A510";
 Game.DIM_X = 1000;
 Game.DIM_Y = 600;
 Game.FPS = 32;
-Game.NUM_DEFENDERS = 6;
+Game.NUM_DEFENDERS = 10;
 
 module.exports = Game;

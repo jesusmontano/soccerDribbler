@@ -19,6 +19,7 @@ class Dribbler extends MovingObject {
         options.vel = options.vel || [0, 0];
         options.color = options.color || randomColor();
         super(options);
+        this.isWrappable = false;
     }
 
     power(impulse) {
@@ -31,7 +32,7 @@ class Dribbler extends MovingObject {
     }
 
     relocate() {
-        this.pos = this.game.randomPosition(); // I will want to make this be fixed, not random.
+        this.pos = [465, 250]; // this.game.randomPosition(); 
         this.vel = [0, 0]; // If I keep this at [0, 0], it will never move? Maybe I have to set it at a fixed speed.
     }
 

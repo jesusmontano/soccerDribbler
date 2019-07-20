@@ -44,6 +44,14 @@ class Defender extends MovingObject {
 
         return false;
     }
+    
+    wallCollision() {
+        this.vel[0] = - this.vel[0];
+    }
+
+    otherWallCollision() {
+        this.vel[1] = - this.vel[1];
+    }
 }
 
 module.exports = Defender;
