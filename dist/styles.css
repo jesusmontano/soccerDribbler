@@ -1,0 +1,10 @@
+.game-canvas {
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: blue;
+}

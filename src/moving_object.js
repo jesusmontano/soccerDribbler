@@ -52,6 +52,8 @@ class MovingObject {
                 // this.pos = this.game.wrap(this.pos);
             } else {
                 this.vel = [0, 0];
+                // need to add additional logic here, probably going to
+                // have to increase position by one unit
                 // this.remove();
             }
         }

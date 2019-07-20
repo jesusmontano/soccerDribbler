@@ -102,10 +102,24 @@ class Game {
     }
     
     randomPosition() {
-        return [
+        // return [
+        //     Game.DIM_X * Math.random(),
+        //     Game.DIM_Y * Math.random()
+        // ];
+        const pos = [
             Game.DIM_X * Math.random(),
             Game.DIM_Y * Math.random()
         ];
+
+        if (pos[0] < 100 || pos[0] > 900) {
+            pos[0] = Game.DIM_X * Math.random();
+        }
+
+        if (pos[1] < 100 || pos[1] > 500) {
+            pos[1] = Game.DIM_Y * Math.random();
+        }
+
+        return pos;
     }
     
     remove(object) {

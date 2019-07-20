@@ -5,7 +5,7 @@ const Dribbler = require("./dribbler");
 const DEFAULTS = {
     COLOR: "#505050",
     RADIUS: 35,
-    SPEED: 4
+    SPEED: 3
 };
 
 class Defender extends MovingObject {
