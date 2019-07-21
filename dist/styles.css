@@ -13,13 +13,6 @@
     border: 10px dashed black;
 }
 
-.summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: lighter;
-}
-
 @font-face {
     font-family: fifaFont;
     src: url("XBall.ttf");
@@ -38,4 +31,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.objective-div {
+    display: flex;
+    justify-content: center;
+}
+
+.objective-description {
+    font-size: 200%;
 }
