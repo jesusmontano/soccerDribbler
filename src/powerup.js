@@ -28,6 +28,7 @@ class Powerup extends MovingObject {
     collideWith(otherObject) {
         if (otherObject instanceof Dribbler) {
             this.remove();
+            (this.game.defenders[0]).remove();
             // Game.remove(Game.defenders[0]);
         }
     }

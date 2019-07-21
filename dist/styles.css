@@ -1,21 +1,3 @@
-/* .div {
-    border-radius: 0.75rem;
-    display: flex;
-    justify-content: center;
-} */
-
-body {
-    background-color: lightblue;
-}
-
-.title {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
-    display: flex;
-    justify-content: center;
-    font-size: 100px;
-}
-
 .canvas {
     border: 10px solid white;
     border-radius: .75rem;
@@ -26,24 +8,34 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgb(179, 52, 53);
-    padding: 100px;
+    padding: 70px;
     border-radius: 250px;
     border: 10px dashed black;
-}
-
-.cover-star {
-    display: flex;
-    justify-content: center;
 }
 
 .summary {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: lighter;
 }
 
-.instructions-text {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: black;
-    font-size: larger;
+@font-face {
+    font-family: fifaFont;
+    src: url("XBall.ttf");
+}
+
+body {
+    font-family: fifaFont;
+}
+
+.title-text {
+    font-size: 600%;
+    padding-right: 30px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
