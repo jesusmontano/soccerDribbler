@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>Super Dribbler</title>
 </head>
 <body>
-    <div>
+    <div class="cover">
         <h1 class="title">
-            Super Dribbler
+            <img src="taxEvasion2019.png">
         </h1>
-        <img src="messiAnimation.png" id="dribbler"> vs. <img src="ramos.png" id="defender">
+        <div class="cover-star">
+            <img class="messi" src="messiFullSize.png" alt="cover-star" height="395" width="279">
+        </div>
     </div>
-    <div>
+    <div class="summary">
         <h2>
-            Keep the ball away from the defenders for as long as possible.
+            <img src="instructions.png" alt="instructions">
         </h2>
+        <p>
+            Keep the ball away from the defenders for as long as possible.
+        </p>
         <h3>
-            Instructions:
+            Controls
         </h3>
         <ul>
             <li>
@@ -56,10 +62,10 @@
             </li>
         </ul>
     </div>
-    <div class="game-canvas">
-         <canvas id="game-canvas"></canvas>
+    <div class="stadium">
+        <canvas id="game-canvas" class="canvas"></canvas>
     </div>
-
+    <img src="messiAnimation.png" id="dribbler"> vs. <img src="ramos.png" id="defender">
     <script type="application/javascript" src="../vendor/keymaster.js"></script>
     <script type="application/javascript" src="./main.js"></script>
 </body>

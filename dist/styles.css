@@ -1,10 +1,39 @@
-.game-canvas {
+/* .div {
     border-radius: 0.75rem;
+    display: flex;
+    justify-content: center;
+} */
+
+.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+}
+
+.canvas {
+    border: 10px solid white;
+    border-radius: .75rem;
+    background-color:white;
+}
+
+.stadium {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(179, 52, 53);
+    padding: 100px;
+    border-radius: 250px;
+    border: 10px dashed black;
+}
+
+.cover-star {
     display: flex;
     justify-content: center;
 }
 
-.title {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: blue;
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
