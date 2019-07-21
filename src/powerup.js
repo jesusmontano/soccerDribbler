@@ -1,9 +1,13 @@
 const MovingObject = require("./moving_object");
+const Util = require("./util");
+const Dribbler = require("./dribbler");
 
 class Powerup extends MovingObject {
-    construtor(options) {
-        options.radius = Powerup.RADIUS;
+    constructor(options) {
         super(options);
+        this.pos = options.pos || options.game.randomPosition();
+        this.radius = Powerup.RADIUS;
+        this.vel = options.vel || Util.randomVec(Powerup.SPEED);
         this.isWrappable = true;
     }
 
@@ -20,9 +24,15 @@ class Powerup extends MovingObject {
         // ctx.fillStyle = pat;
         // ctx.fill();
     }
+
+    collideWith(otherObject) {
+        if (otherObject instanceof Dribbler) {
+            this.remove();
+            // Game.remove(Game.defenders[0]);
+        }
+    }
 }
 
 Powerup.RADIUS = 35;
 Powerup.SPEED = 2;
-
 module.exports = Powerup;

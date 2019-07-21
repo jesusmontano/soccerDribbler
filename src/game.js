@@ -1,13 +1,16 @@
 const Defender = require("./defender");
 const Util = require("./util");
 const Dribbler = require("./dribbler");
+const Powerup = require("./powerup");
 
 class Game {
     constructor() {
         this.defenders = [];
         this.dribblers = [];
+        this.powerups = [];
 
         this.addDefenders();
+        this.addPowerups();
     }
 
     add(object) {
@@ -15,6 +18,8 @@ class Game {
             this.defenders.push(object);
         } else if (object instanceof Dribbler) {
             this.dribblers.push(object);
+        } else if (object instanceof Powerup) {
+            this.powerups.push(object);
         } else {
             throw new Error("unknown type of object");
         }
@@ -25,6 +30,13 @@ class Game {
         for (let i = 0; i < Game.NUM_DEFENDERS; i++) {
             this.add(new Defender({ game: this }));
         }
+    }
+
+    addPowerups() {
+        for (let i = 0; i < Game.NUM_DEFENDERS; i++) {
+            this.add(new Powerup({ game: this }));
+        }
+        debugger;
     }
 
     addDribbler() {
@@ -40,7 +52,7 @@ class Game {
 
     
     allObjects() {
-        return [].concat(this.dribblers, this.defenders);
+        return [].concat(this.dribblers, this.defenders, this.powerups);
     }
     
     checkCollisions() {
@@ -127,6 +139,8 @@ class Game {
             this.defenders.splice(this.defenders.indexOf(object), 1);
         } else if (object instanceof Dribbler) {
             this.dribblers.splice(this.dribblers.indexOf(object), 1);
+        } else if (object instanceof Powerup) {
+            this.powerups.splice(this.powerups.indexOf(object), 1);
         } else {
             throw new Error("unknown type of object");
         }
