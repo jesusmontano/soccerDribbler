@@ -135,7 +135,7 @@ class Game {
     step(delta) {
         this.moveObjects(delta);
         this.checkCollisions();
-        this.checkWallCollisions();
+        // this.checkWallCollisions();
     }
 
     wrap(pos) {

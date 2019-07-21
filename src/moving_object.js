@@ -47,9 +47,9 @@ class MovingObject {
 
         if (this.game.isOutOfBounds(this.pos)) {
             if (this.isWrappable) {
-                this.wallCollision();
-                this.otherWallCollision();
-                // this.pos = this.game.wrap(this.pos);
+                // this.wallCollision();
+                // this.otherWallCollision();
+                this.pos = this.game.wrap(this.pos);
             } else {
                 this.vel = [0, 0];
                 // need to add additional logic here, probably going to
