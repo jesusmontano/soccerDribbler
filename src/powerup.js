@@ -12,7 +12,7 @@ class Powerup extends MovingObject {
     }
 
     draw(ctx) {
-        const img = document.getElementById("ball");
+        const img = document.getElementById("redcard");
         // const pat = ctx.createPattern(img, "repeat");
         ctx.drawImage(img, this.pos[0], this.pos[1])
         // ctx.fillStyle = this.color;
