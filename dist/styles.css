@@ -39,8 +39,10 @@ body {
 }
 
 .objective-description {
-    font-size: 200%;
+    font-size: 175%;
     color: rgb(41, 39, 39);
+    display: flex;
+    justify-content: center;
 }
 
 .controls {
@@ -66,11 +68,11 @@ body {
 }
 
 .basic-controls {
-    font-size: 150%;
+    font-size: 175%;
 }
 
 .advanced-controls {
-    font-size: 150%;
+    font-size: 175%;
 }
 
 .objective-label {

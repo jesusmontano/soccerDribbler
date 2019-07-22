@@ -12,7 +12,7 @@ class Ball extends MovingObject {
     }
 
     draw(ctx) {
-        const img = document.getElementById("redcard");
+        const img = document.getElementById("ball");
         // const pat = ctx.createPattern(img, "repeat");
         ctx.drawImage(img, this.pos[0], this.pos[1])
         // ctx.fillStyle = this.color;
@@ -34,5 +34,5 @@ class Ball extends MovingObject {
 }
 
 Ball.RADIUS = 35;
-Ball.SPEED = 4;
+Ball.SPEED = 5;
 module.exports = Ball;
