@@ -23,4 +23,4 @@ Saturday:
 * Implement player/defender collision mechanics.
 
 Sunday: 
-* Improve visuals and iron out the remaind of the project.
+* Improve visuals and iron out the remainder of the project.
