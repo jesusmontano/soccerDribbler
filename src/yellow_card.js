@@ -1,0 +1,39 @@
+const MovingObject = require("./moving_object");
+const Util = require("./util");
+const Dribbler = require("./dribbler");
+
+class YellowCard extends MovingObject {
+    constructor(options) {
+        super(options);
+        this.pos = options.pos || options.game.randomPosition();
+        this.radius = YellowCard.RADIUS;
+        this.vel = options.vel || Util.randomVec(YellowCard.SPEED);
+        this.isWrappable = true;
+    }
+
+    draw(ctx) {
+        const img = document.getElementById("yellowcard");
+        // const pat = ctx.createPattern(img, "repeat");
+        ctx.drawImage(img, this.pos[0], this.pos[1])
+        // ctx.fillStyle = this.color;
+
+        ctx.beginPath();
+        ctx.arc(
+            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
+        );
+        // ctx.fillStyle = pat;
+        // ctx.fill();
+    }
+
+    collideWith(otherObject) {
+        if (otherObject instanceof Dribbler) {
+            this.remove();
+            (this.game.defenders[0]).remove();
+            // Game.remove(Game.defenders[0]);
+        }
+    }
+}
+
+YellowCard.RADIUS = 35;
+YellowCard.SPEED = 2;
+module.exports = YellowCard;
