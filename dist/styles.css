@@ -82,3 +82,9 @@ body {
     color: #20558d;
     padding-bottom: 20px;
 }
+
+.legend-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
