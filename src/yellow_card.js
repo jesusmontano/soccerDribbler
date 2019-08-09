@@ -29,14 +29,31 @@ class YellowCard extends MovingObject {
         if (otherObject instanceof Dribbler) {
             this.remove();
             // (this.game.defenders[0]).remove(); // don't remove defenders, but slow them down
-            for (let i = 0; i < this.game.defenders.length; i++) {
-                debugger;
-                this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 0.75 
-                this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 0.75 
+            let velFactor = Math.floor(Math.random() * 10);
+
+            if (velFactor <= 4) {
+                for (let i = 0; i < this.game.defenders.length; i++) {
+                    debugger;
+                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 0.6
+                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 0.6
+                }
+            } else {
+                for (let i = 0; i < this.game.defenders.length; i++) {
+                    debugger;
+                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 1.4
+                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 1.4
+                }
             }
 
-            this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 1.5
-            this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 1.5
+            // for (let i = 0; i < this.game.defenders.length; i++) {
+            //     debugger;
+            //     this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 0.75 
+            //     this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 0.75 
+            // }
+
+            // this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 1.5
+            // this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 1.5
+
             // Game.remove(Game.defenders[0]);
         }
     }
