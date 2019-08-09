@@ -14,12 +14,12 @@
 }
 
 @font-face {
-    font-family: fifaFont;
-    src: url("XBall.ttf");
+    font-family: marioFont;
+    src: url("Mario-Kart-DS.ttf");
 }
 
 body {
-    font-family: fifaFont;
+    font-family: marioFont;
 }
 
 .title-text {
