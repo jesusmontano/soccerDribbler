@@ -197,6 +197,6 @@ Game.BG_COLOR = "#12A510";
 Game.DIM_X = 1000;
 Game.DIM_Y = 600;
 Game.FPS = 32;
-Game.NUM_DEFENDERS = 6;
+Game.NUM_DEFENDERS = 5;
 
 module.exports = Game;

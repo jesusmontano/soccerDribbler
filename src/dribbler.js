@@ -19,7 +19,7 @@ class Dribbler extends MovingObject {
         options.vel = options.vel || [0, 0];
         options.color = options.color || randomColor();
         super(options);
-        this.isWrappable = false;
+        this.isWrappable = true;
     }
 
     power(impulse) {
