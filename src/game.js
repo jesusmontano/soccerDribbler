@@ -3,6 +3,7 @@ const Util = require("./util");
 const Dribbler = require("./dribbler");
 const Powerup = require("./powerup");
 const Ball = require("./ball");
+const YellowCard = require("./yellow_card");
 
 class Game {
     constructor() {
@@ -10,10 +11,12 @@ class Game {
         this.dribblers = [];
         this.powerups = [];
         this.balls = [];
+        this.yellowCards = [];
 
         this.addDefenders();
         this.addPowerups();
         this.addBall();
+        this.addYellowCard();
     }
 
     add(object) {
@@ -25,6 +28,8 @@ class Game {
             this.powerups.push(object);
         } else if (object instanceof Ball) {
             this.balls.push(object);
+        } else if (object instanceof YellowCard) {
+            this.yellowCards.push(object);  
         } else {
             throw new Error("unknown type of object");
         }
@@ -40,6 +45,13 @@ class Game {
     addPowerups() {
         for (let i = 0; i < Game.NUM_DEFENDERS; i++) {
             this.add(new Powerup({ game: this }));
+        }
+        debugger;
+    }
+
+    addYellowCard() {
+        for (let i = 0; i < 1; i++) {
+            this.add(new YellowCard({ game: this }));
         }
         debugger;
     }
@@ -68,7 +80,7 @@ class Game {
 
     
     allObjects() {
-        return [].concat(this.dribblers, this.defenders, this.powerups, this.balls);
+        return [].concat(this.dribblers, this.defenders, this.powerups, this.balls, this.yellowCards);
     }
     
     checkCollisions() {
@@ -159,7 +171,9 @@ class Game {
             this.powerups.splice(this.powerups.indexOf(object), 1);
         } else if (object instanceof Ball) {
             this.balls.splice(this.balls.indexOf(object), 1);
-        } else {
+        } else if (object instanceof YellowCard) {
+            this.yellowCards.splice(this.yellowCards.indexOf(object), 1);
+        }else {
             throw new Error("unknown type of object");
         }
     }
