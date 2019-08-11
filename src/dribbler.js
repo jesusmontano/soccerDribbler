@@ -24,17 +24,35 @@ class Dribbler extends MovingObject {
     }
 
     draw(ctx) {
-        const img = document.getElementById("dribbler");
-        // const pat = ctx.createPattern(img, "repeat");
-        ctx.drawImage(img, this.pos[0], this.pos[1])
-        // ctx.fillStyle = this.color;
+        if (this.life < 1) {
+            const img = document.getElementById("ball");
+            // const pat = ctx.createPattern(img, "repeat");
+            ctx.drawImage(img, this.pos[0], this.pos[1])
+            // ctx.fillStyle = this.color;
 
-        ctx.beginPath();
-        ctx.arc(
-            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
-        );
-        // ctx.fillStyle = pat;
-        // ctx.fill();
+            ctx.beginPath();
+            ctx.arc(
+                this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
+            );
+        } else {
+            const img = document.getElementById("dribbler");
+            // const pat = ctx.createPattern(img, "repeat");
+            ctx.drawImage(img, this.pos[0], this.pos[1])
+            // ctx.fillStyle = this.color;
+
+            ctx.beginPath();
+            ctx.arc(
+                this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
+            );
+        }
+
+        // const img = document.getElementById("dribbler");
+        // ctx.drawImage(img, this.pos[0], this.pos[1])
+
+        // ctx.beginPath();
+        // ctx.arc(
+        //     this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
+        // );
     }
 
     power(impulse) {
