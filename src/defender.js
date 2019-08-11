@@ -34,6 +34,9 @@ class Defender extends MovingObject {
     collideWith(otherObject) {
         if (otherObject instanceof Dribbler) {
             otherObject.relocate();
+            debugger;
+            otherObject.life -= 1;
+            debugger;
             return true;
         }
         // } else if (otherObject instanceof Bullet) {

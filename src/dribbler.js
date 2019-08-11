@@ -20,6 +20,21 @@ class Dribbler extends MovingObject {
         options.color = options.color || randomColor();
         super(options);
         this.isWrappable = true;
+        this.life = 1;
+    }
+
+    draw(ctx) {
+        const img = document.getElementById("dribbler");
+        // const pat = ctx.createPattern(img, "repeat");
+        ctx.drawImage(img, this.pos[0], this.pos[1])
+        // ctx.fillStyle = this.color;
+
+        ctx.beginPath();
+        ctx.arc(
+            this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI, true
+        );
+        // ctx.fillStyle = pat;
+        // ctx.fill();
     }
 
     power(impulse) {
