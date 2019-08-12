@@ -12,7 +12,7 @@ class Game {
         this.powerups = [];
         this.balls = [];
         this.yellowCards = [];
-        this.state = "game";
+        this.state = "victory";
 
         this.addDefenders();
         this.addPowerups();
@@ -115,35 +115,45 @@ class Game {
     }
     
     draw(ctx) {
-        if (this.state = "over") {
+        if (this.state === "over") {
             const img = new Image();
             img.onload = function () {
                 ctx.drawImage(img, 0, 0);
             };
             img.src = 'gameOver.png';
+        } else if (this.state === "victory") {
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = 'victory.png';
         } else {
             const img = new Image();
             img.onload = function () {
                 ctx.drawImage(img, 0, 0);
             };
             img.src = 'background.jpeg';
+
+            this.allObjects().forEach((object) => {
+                object.draw(ctx);
+            });
         }
 
 
-        const img = new Image();
-        img.onload = function () {
-            ctx.drawImage(img, 0, 0);
-        };
-        img.src = 'background.jpeg';
+        // const img = new Image();
+        // img.onload = function () {
+        //     ctx.drawImage(img, 0, 0);
+        // };
+        // img.src = 'background.jpeg';
 
 
         // ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
         // ctx.fillStyle = Game.BG_COLOR;
         // ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
         
-        this.allObjects().forEach((object) => {
-            object.draw(ctx);
-        });
+        // this.allObjects().forEach((object) => {
+        //     object.draw(ctx);
+        // });
     }
     
     isOutOfBounds(pos) {
@@ -192,6 +202,10 @@ class Game {
         }else {
             throw new Error("unknown type of object");
         }
+    }
+
+    checkState() {
+        
     }
     
     step(delta) {
