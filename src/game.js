@@ -205,12 +205,12 @@ class Game {
     }
 
     checkState() {
-        if (this.defenders.length === 0 && this.dribblers[0].lives > 0) {
+        if (this.powerups.length === 0 && this.dribblers[0].life > 0) {
             this.state = "victory";
-            this.draw(ctx);
-        } else if (this.defenders.length > 0 && this.dribblers[0].lives === 0) {
+            this.draw();
+        } else if (this.defenders.length > 0 && this.dribblers[0].life === 0) {
             this.state = "over";
-            this.draw(ctx);
+            this.draw();
         } else {
             this.state = "game";
         }
@@ -219,6 +219,7 @@ class Game {
     step(delta) {
         this.moveObjects(delta);
         this.checkCollisions();
+        this.checkState();
         // this.checkWallCollisions();
     }
 
