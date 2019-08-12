@@ -115,6 +115,21 @@ class Game {
     }
     
     draw(ctx) {
+        if (this.state = "over") {
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = 'gameOver.png';
+        } else {
+            const img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = 'background.jpeg';
+        }
+
+
         const img = new Image();
         img.onload = function () {
             ctx.drawImage(img, 0, 0);
