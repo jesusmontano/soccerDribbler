@@ -12,6 +12,7 @@ class Game {
         this.powerups = [];
         this.balls = [];
         this.yellowCards = [];
+        this.state = "game";
 
         this.addDefenders();
         this.addPowerups();
