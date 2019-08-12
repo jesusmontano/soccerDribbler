@@ -208,12 +208,14 @@ class Game {
         if (this.powerups.length === 0 && this.dribblers[0].life > 0) {
             this.state = "victory";
             this.draw();
-        } else if (this.defenders.length > 0 && this.dribblers[0].life === 0) {
+        } else if (this.powerups.length > 0 && this.dribblers[0].life < 1) {
             this.state = "over";
             this.draw();
-        } else {
-            this.state = "game";
         }
+        // } else {
+        //     this.state = "game";
+        //     // this.draw();
+        // }
     }
     
     step(delta) {

@@ -28,6 +28,7 @@ class Ball extends MovingObject {
     collideWith(otherObject) {
         if (otherObject instanceof Dribbler) {
             otherObject.relocate();
+            otherObject.life -= 1
             // Game.remove(Game.defenders[0]);
         }
     }
