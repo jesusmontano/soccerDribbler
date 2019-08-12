@@ -12,7 +12,7 @@ class Game {
         this.powerups = [];
         this.balls = [];
         this.yellowCards = [];
-        this.state = "victory";
+        this.state = "game";
 
         this.addDefenders();
         this.addPowerups();
@@ -205,7 +205,15 @@ class Game {
     }
 
     checkState() {
-        
+        if (this.defenders.length === 0 && this.dribblers[0].lives > 0) {
+            this.state = "victory";
+            this.draw(ctx);
+        } else if (this.defenders.length > 0 && this.dribblers[0].lives === 0) {
+            this.state = "over";
+            this.draw(ctx);
+        } else {
+            this.state = "game";
+        }
     }
     
     step(delta) {
