@@ -5,7 +5,7 @@ const Dribbler = require("./dribbler");
 class Ball extends MovingObject {
     constructor(options) {
         super(options);
-        this.pos = options.pos || options.game.randomPosition();
+        this.pos = [0, 0], [0, 0] || options.pos || options.game.randomPosition();
         this.radius = Ball.RADIUS;
         this.vel = options.vel || Util.randomVec(Ball.SPEED);
         this.isWrappable = true;
