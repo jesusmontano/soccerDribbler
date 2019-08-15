@@ -15,14 +15,15 @@ The project was implemented using the following technologies:
 * `HTML5 Canvas` for rendering.
 
 ## Implementation Timeline
-Thursday:
-* Make the base of the game. This will include the field and movement mechanics. 
+8/18
+* Make the base of the game. This will include the field and movement mechanics
+of the referee, opponents, and other moving objects. 
 
-Friday:
-* The spawning mechanics of defenders will be added.
+8/19
+* The spawning mechanics of defenders will be added and power-ups will be implemented.
 
-Saturday: 
-* Implement player/defender collision mechanics.
+8/20 
+* Implement collision detection algorithm for all moving objects.
 
-Sunday: 
+8/21
 * Improve visuals and iron out the remainder of the project.
