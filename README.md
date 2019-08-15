@@ -3,7 +3,8 @@
 Angry Referee is a single-player game. The objective of the game is to collect
 the red cards while avoiding the players and the ball. Running into a defender 
 or the ball will end the game. Collecting a mystery block may slow or speed up 
-the opponents and ball.
+the opponents and ball. In order to win, the referee must collect all of the red
+cards and not collide with the ball or any of the players.
 
 ## Functionality & MVP Features
 * Users are able to manipulate the speed and direction of the referee.
