@@ -6,6 +6,8 @@ or the ball will end the game. Collecting a mystery block may slow or speed up
 the opponents and ball. In order to win, the referee must collect all of the red
 cards and not collide with the ball or any of the players.
 
+![](dist/angry_referee.png)
+
 ## Functionality & MVP Features
 * Users are able to manipulate the speed and direction of the referee.
 * Users are able to alter the difficulty of the game with a mystery power-up.
