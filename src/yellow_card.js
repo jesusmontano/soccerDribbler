@@ -34,23 +34,23 @@ class YellowCard extends MovingObject {
             if (velFactor <= 4) {
                 for (let i = 0; i < this.game.defenders.length; i++) {
                     debugger;
-                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 0.8
-                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 0.8
+                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 0.5
+                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 0.5
                 }
             } else {
                 for (let i = 0; i < this.game.defenders.length; i++) {
                     debugger;
-                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 1.4;
-                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 1.4;
+                    this.game.defenders[i].vel[0] = this.game.defenders[i].vel[0] * 1.5;
+                    this.game.defenders[i].vel[1] = this.game.defenders[i].vel[1] * 1.5;
                 }
             }
 
             if (velFactor <= 4) {
-                this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 0.8;
-                this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 0.8;
+                this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 0.5;
+                this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 0.5;
             } else {
-                this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 1.4;
-                this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 1.4;
+                this.game.balls[0].vel[0] = this.game.balls[0].vel[0] * 1.5;
+                this.game.balls[0].vel[1] = this.game.balls[0].vel[1] * 1.5;
             }
 
             // for (let i = 0; i < this.game.defenders.length; i++) {
