@@ -5,13 +5,12 @@ the red cards while avoiding the players and the ball. Running into a defender
 or the ball will end the game.
 
 ## Functionality & MVP Features
-* Users are able to move the soccer player with the ball.
-* View the time amount of time they've held onto the ball without colliding with a defender.
-* Users are able to pause the game.
+* Users are able to manipulate the speed and direction of the referee.
+* Users are able to alter the difficulty of the game with a mystery power-up.
 
 ## Architecture and Technologies
 The project was implemented using the following technologies:
-* Vanilla JavaScript for the overall structure and logic of the game.
+* `JavaScript` for the overall structure and logic of the game.
 * `HTML5 Canvas` for rendering.
 
 ## Implementation Timeline
