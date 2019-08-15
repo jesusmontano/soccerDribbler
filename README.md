@@ -1,6 +1,8 @@
-# Soccer Dribbler
+# Angry Referee
 ## Background and Overview
-Soccer Dribbler is a simple single-player game. The objective of the game is to avoid oncoming defenders for as long as possible. Running into a defender will end the game.
+Angry Referee is a single-player game. The objective of the game is to collect
+the red cards while avoiding the players and the ball. Running into a defender 
+or the ball will end the game.
 
 ## Functionality & MVP Features
 * Users are able to move the soccer player with the ball.
