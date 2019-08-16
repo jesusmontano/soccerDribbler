@@ -88,3 +88,8 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+.inner {
+    display: flex;
+    justify-content: space-evenly;
+}
