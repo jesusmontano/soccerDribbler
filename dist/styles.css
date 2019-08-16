@@ -93,3 +93,8 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
+.copyright {
+    display: flex;
+    justify-content: space-evenly;
+}
