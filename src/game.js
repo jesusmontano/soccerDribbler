@@ -13,6 +13,7 @@ class Game {
         this.balls = [];
         this.yellowCards = [];
         this.state = "game";
+        this.started = false;
 
         this.addDefenders();
         this.addPowerups();
@@ -138,6 +139,7 @@ class Game {
                 object.draw(ctx);
             });
         }
+
 
 
         // const img = new Image();
