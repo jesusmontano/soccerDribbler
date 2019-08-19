@@ -225,9 +225,19 @@ class Game {
     }
     
     step(delta) {
-        this.moveObjects(delta);
-        this.checkCollisions();
-        this.checkState();
+        if (this.started === false) {
+            // this.moveObjects(delta);
+            this.checkState();
+        } else {
+            this.moveObjects(delta);
+            this.checkCollisions();
+            this.checkState();
+        }
+
+        // this.moveObjects(delta);
+        // this.checkCollisions();
+        // this.checkState();
+
         // this.checkWallCollisions();
     }
 

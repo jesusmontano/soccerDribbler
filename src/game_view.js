@@ -8,6 +8,8 @@ class GameView {
     bindKeyHandlers() {
         const dribbler = this.dribbler;
 
+        const game = this.game;
+
         Object.keys(GameView.MOVES).forEach((k) => {
             const move = GameView.MOVES[k];
             key(k, () => { dribbler.power(move); });
@@ -20,6 +22,8 @@ class GameView {
 
         // key("space", () => { ship.fireBullet(); });
         key("space", () => { dribbler.stop(); });
+
+        key("enter", () => {game.begin(); });
     }
 
     start() {
