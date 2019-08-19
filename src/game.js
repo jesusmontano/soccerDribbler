@@ -138,11 +138,26 @@ class Game {
                 ctx.drawImage(img, 0, 0);
             };
             img.src = 'background.jpeg';
+            
+            // this.allObjects().forEach((object) => {
+            //     object.draw(ctx);
+            // });
 
-            this.allObjects().forEach((object) => {
-                object.draw(ctx);
-            });
+            if (this.started === true) {
+                this.allObjects().forEach((object) => {
+                    object.draw(ctx);
+                });
+            }
+            
+            if (this.started === false) {
+                const img = new Image();
+                img.onload = function () {
+                    ctx.drawImage(img, 15, 200);
+                };
+                img.src = 'pressEnter.png';
+            }
         }
+
 
 
 
