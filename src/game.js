@@ -37,6 +37,10 @@ class Game {
         }
     }
 
+    begin() {
+        this.started = true;
+    }
+
 
     addDefenders() {
         for (let i = 0; i < Game.NUM_DEFENDERS; i++) {
