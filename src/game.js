@@ -152,7 +152,7 @@ class Game {
             if (this.started === false) {
                 const img = new Image();
                 img.onload = function () {
-                    ctx.drawImage(img, 15, 200);
+                    ctx.drawImage(img, 30, 230);
                 };
                 img.src = 'pressEnter.png';
             }
